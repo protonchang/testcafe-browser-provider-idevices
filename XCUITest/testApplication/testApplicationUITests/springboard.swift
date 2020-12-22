@@ -60,20 +60,23 @@ class Springboard {
             goHomeAndLoadSettings(settingsIcon)
             //go to `General` -> `Reset` and tap `Reset Location & Privacy`
             settings.tables.staticTexts["General"].tap()
+            Thread.sleep(forTimeInterval: 5.0)
             settings.tables.staticTexts["Reset"].tap()
+            Thread.sleep(forTimeInterval: 5.0)
             settings.tables.staticTexts["Reset Location & Privacy"].tap()
+            Thread.sleep(forTimeInterval: 5.0)
             
             //tap the `Reset Warnings` button
             
-            Thread.sleep(forTimeInterval: 0.5)
+            Thread.sleep(forTimeInterval: 2.5)
             if settings.buttons.count != 3 {
                 print("A problem occurred trying to reset your location and privacy settings. This is probably because you have a lock code.")
                 //hit the cancel button
                 let count = settings.navigationBars.buttons.count;
                 let backButton = settings.navigationBars.buttons.element(boundBy: 0)
-                Thread.sleep(forTimeInterval: 0.5)
+                Thread.sleep(forTimeInterval: 2.5)
                 if backButton.exists {
-                    Thread.sleep(forTimeInterval: 0.5)
+                    Thread.sleep(forTimeInterval: 2.5)
                     backButton.tap()
                 }
             }
